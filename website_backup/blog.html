@@ -1,0 +1,277 @@
+<!-- =========================================
+VAXCLUB FINAL PROFESSIONAL VERSION
+Top Bar + Perfect Responsive Navbar
+========================================= -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VaxClub - Family Vaccination</title>
+
+<!-- GOOGLE FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- FONT AWESOME -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+<link rel="stylesheet" href="./css/blog.css" />
+
+</head>
+
+<body>
+
+<!-- =========================================
+TOP BAR
+========================================= -->
+
+<div class="top-bar">
+
+<div class="top-left">
+✨ Pre-book at VaxClub → 7% off all vaccines · 20% off Influenza Vaccinate at VaxClub Partner Clinics
+</div>
+
+<div class="top-right">
+
+<a href="#" class="clinic-btn">
+Find clinics →
+</a>
+
+<div class="privacy">
+<i class="fa-solid fa-lock"></i>
+Data-privacy first
+</div>
+
+</div>
+
+</div>
+
+<nav>
+
+  <a href="index.html" class="logo">
+
+  <div class="logo-circle">
+    <i class="fa-solid fa-syringe"></i>
+  </div>
+
+  <h1>VaxClub</h1>
+
+</a>
+
+  <div class="nav-links" id="mobileMenu">
+    <a href="drive.html">Drives</a>
+    <a href="partner.html">Partner Clinics</a>
+    <a href="virtual.html">Virtual Consult</a>
+    <a href="diet.html">Diet Chart</a>
+    <a href="vaccine.html">Vaccine Catalog</a>
+    <a href="blog.html">Blog</a>
+    <a href="safetyfaq.html">Safety & FAQ</a>
+    <a href="admin-login.html">
+      <i class="fa-solid fa-user-shield"></i> Admin
+    </a>
+  </div>
+
+  <!-- FIXED: AUTH OUTSIDE MENU -->
+  <div class="auth-buttons" id="desktopAuth">
+
+  <a href="login.html" class="login-btn">
+    <i class="fa-solid fa-right-to-bracket"></i> Login
+  </a>
+
+  <a href="signup.html" class="signup-btn">
+    <i class="fa-solid fa-user-plus"></i> Sign Up
+  </a>
+
+</div>
+  <!-- BURGER -->
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <i class="fa-solid fa-bars"></i>
+  </div>
+
+</nav>
+
+<!-- IMPORTANT: MOBILE AUTH OUTSIDE NAV -->
+<div class="mobile-auth"></div>
+
+<!-- FLOATING AUTH ICONS (MOBILE ONLY) -->
+<div class="floating-auth" id="floatingAuth">
+
+  <a href="login.html" class="fab login" title="Login">
+    <i class="fa-solid fa-right-to-bracket"></i>
+  </a>
+
+  <a href="signup.html" class="fab signup" title="Sign Up">
+    <i class="fa-solid fa-user-plus"></i>
+  </a>
+
+  <a href="#" class="fab logout" title="Logout" onclick="logoutUser()">
+    <i class="fa-solid fa-right-from-bracket"></i>
+  </a>
+
+</div>
+
+<section class="vax-section">
+
+  <div class="category-tag">
+    <span>📖</span>
+    ARTICLES · VAXCLUB
+  </div>
+
+  <h1 class="main-title">
+    Vaccine clarity,
+    <span class="accent-text">written warmly</span>
+    for Indian families.
+  </h1>
+
+  <p class="subtitle">
+    Pediatrician-reviewed long reads on IAP-ACVIP 2023,
+    the Adult Consensus 2026, side-effects, diet,
+    and what to do when you're worried.
+  </p>
+
+  <!-- =========================================
+  GUEST VIEW (NOT LOGGED IN)
+  ========================================= -->
+
+  <div class="empty-state-card" id="guestView">
+
+    <div class="sparkle-icon">
+      ✨
+    </div>
+
+    <p class="empty-text">
+      No articles yet for this filter.
+    </p>
+
+    <button class="show-all-btn">
+      Show all
+      <span>→</span>
+    </button>
+
+  </div>
+
+  <div id="blogsContainer" style="display:none;">
+
+  <div class="blog-grid" id="blogGrid"></div>
+
+</div>
+
+</section>
+
+
+<div class="floating">
+  <a href="https://wa.me/" class="whatsapp" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  <a href="#" class="chatbot">
+    <i class="fas fa-robot"></i>
+  </a>
+</div>
+
+<div id="chatbotBox" style="
+  position:fixed;
+  bottom:90px;
+  right:20px;
+  width:300px;
+  background:#fff;
+  border-radius:15px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.2);
+  display:none;
+  flex-direction:column;
+  overflow:hidden;
+  z-index:3000;
+">
+
+  <div style="background:#2f5d57;color:#fff;padding:10px;font-weight:500;">
+    VaxBot 🤖
+  </div>
+
+  <div id="chatMessages" style="
+    height:250px;
+    overflow-y:auto;
+    padding:10px;
+    font-size:13px;
+  ">
+    <div>👋 Hi! Ask me anything about vaccines.</div>
+  </div>
+
+  <div style="display:flex;border-top:1px solid #eee;">
+    <input id="chatInput" type="text" placeholder="Type a message..."
+      style="flex:1;border:none;padding:10px;font-size:13px;outline:none;">
+    <button id="sendBtn" style="
+      background:#c95a3d;
+      color:#fff;
+      border:none;
+      padding:10px 15px;
+      cursor:pointer;
+    ">Send</button>
+  </div>
+
+</div>
+
+<!-- Footer -->
+ 
+<footer class="vax-footer">
+    <!-- Brand Section -->
+    <div class="footer-brand">
+        <div class="footer-logo">
+            <div class="logo-icon"><i class="fas fa-syringe"></i></div>
+            <span class="logo-text">VaxClub</span>
+        </div>
+        <p>Board-certified pediatricians visiting your community clubhouse every weekend, making childhood vaccinations convenient, safe, and reassuring for every family.</p>
+    </div>
+
+    <!-- Explore Section -->
+    <div class="footer-nav-group">
+        <h4>Explore</h4>
+        <ul class="footer-links">
+            <li><a href="#">Weekend Drives</a></li>
+            <li><a href="#">Partner Clinics</a></li>
+            <li><a href="#">Vaccine Catalog</a></li>
+            <li><a href="#">Blog · Articles</a></li>
+            <li><a href="#">Safety & FAQ</a></li>
+            <li><a href="#">Privacy Commitment</a></li>
+            <li><a href="#">Financial Security</a></li>
+            <li><a href="#">Become a Partner</a></li>
+            <li><a href="#">Create Account</a></li>
+        </ul>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="footer-nav-group">
+        <h4>Contact</h4>
+        <div class="contact-item">
+            <i class="far fa-envelope"></i>
+            <a href="mailto:contact@vaxclub.com">Contact us</a>
+        </div>
+        <div class="contact-item">
+            <i class="far fa-comment"></i>
+            <span>Chat on WhatsApp</span>
+        </div>
+        <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Weekends at your clubhouse</span>
+        </div>
+    </div>
+</footer>
+
+<!-- =========================================
+FOOTER
+========================================= -->
+
+<footer>
+© 2026 VaxClub · Developed by SKR Tech solutions
+</footer>
+
+<!-- =========================================
+JAVASCRIPT
+========================================= -->
+
+ <script src="./js/blog.js"></script>
+</body>
+</html>

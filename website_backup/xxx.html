@@ -1,0 +1,1090 @@
+<!-- =========================================
+VAXCLUB FINAL PROFESSIONAL VERSION
+Top Bar + Perfect Responsive Navbar
+========================================= -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VaxClub - Family Vaccination</title>
+
+<!-- GOOGLE FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- FONT AWESOME -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+<style>
+
+/* =========================================
+GLOBAL
+========================================= */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Inter',sans-serif;
+background:#faf8f5;
+color:#222;
+overflow-x:hidden;
+}
+
+/* =========================================
+TOP BAR
+========================================= */
+
+.top-bar{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:52px;
+background:#2f6b63;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:0 28px;
+z-index:2000;
+}
+
+.top-left{
+display:flex;
+align-items:center;
+gap:10px;
+color:white;
+font-size:14px;
+font-weight:400;
+}
+
+.top-right{
+display:flex;
+align-items:center;
+gap:16px;
+}
+
+.clinic-btn{
+background:white;
+padding:10px 20px;
+border-radius:30px;
+text-decoration:none;
+color:#2f6b63;
+font-size:14px;
+font-weight:600;
+display:flex;
+align-items:center;
+gap:8px;
+transition:0.3s;
+}
+
+.clinic-btn:hover{
+transform:translateY(-2px);
+}
+
+.privacy{
+display:flex;
+align-items:center;
+gap:8px;
+color:white;
+font-size:14px;
+}
+
+.top-bar {
+  height: 52px; /* Keep this consistent */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2000;
+}
+
+nav {
+  position: fixed;
+  top: 52px; /* This MUST match the height of the top-bar */
+  height: 82px;
+  width: 100%;
+  z-index: 1500;
+}
+
+/* =========================================
+NAVBAR
+========================================= */
+
+nav{
+position:fixed;
+top:52px;
+left:0;
+width:100%;
+height:82px;
+background:rgba(255,255,255,0.96);
+backdrop-filter:blur(12px);
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:0 6%;
+z-index:1500;
+border-bottom:1px solid rgba(0,0,0,0.05);
+}
+
+/* LOGO */
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  text-decoration:none;
+  color:inherit;
+}
+
+.logo-circle{
+width:44px;
+height:44px;
+border-radius:50%;
+background:#d36b4b;
+display:flex;
+justify-content:center;
+align-items:center;
+color:white;
+font-size:17px;
+}
+
+.logo h1{
+font-size:30px;
+font-family:'Cormorant Garamond',serif;
+font-weight:700;
+color:#222;
+}
+
+/* NAV LINKS */
+
+.nav-links{
+display:flex;
+align-items:center;
+gap:28px;
+}
+
+.nav-links a{
+text-decoration:none;
+font-size:15px;
+color:#555;
+font-weight:500;
+transition:0.3s;
+}
+
+.nav-links a:hover{
+color:#d36b4b;
+}
+
+/* AUTH BUTTONS */
+
+.auth-buttons{
+display:flex;
+align-items:center;
+gap:14px;
+}
+
+.login-btn,
+.signup-btn,
+.logout-btn{
+padding:12px 24px;
+border-radius:40px;
+font-size:15px;
+font-weight:600;
+cursor:pointer;
+transition:0.3s;
+border:none;
+}
+
+.login-btn{
+background:#f1f1f1;
+color:#333;
+}
+
+.signup-btn{
+background:#d36b4b;
+color:white;
+}
+
+.logout-btn{
+background:#c62828;
+color:white;
+}
+
+.login-btn:hover,
+.signup-btn:hover,
+.logout-btn:hover{
+transform:translateY(-2px);
+}
+
+/* BURGER MENU */
+
+.menu-toggle{
+display:none;
+width:44px;
+height:44px;
+border-radius:12px;
+justify-content:center;
+align-items:center;
+cursor:pointer;
+font-size:22px;
+color:#222;
+transition:0.3s;
+}
+
+.menu-toggle:hover{
+background:#f2f2f2;
+}
+
+
+.floating{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  z-index:2500;
+}
+
+.floating a{
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  font-size:20px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.15);
+  transition:all 0.3s ease;
+}
+
+/* WhatsApp */
+.whatsapp{
+  background:#25D366;
+  color:#fff;
+}
+
+/* Chatbot */
+.chatbot{
+  background:#2f4e5d;
+  color:#fff;
+}
+
+/* Hover Effects */
+.floating a:hover{
+  transform:translateY(-4px) scale(1.05);
+  box-shadow:0 10px 25px rgba(0,0,0,0.25);
+}
+
+
+/* =========================================
+FLOATING AUTH ICONS
+========================================= */
+
+.floating-auth {
+  position: fixed;
+  bottom: 160px;
+  right: 18px;
+  display: none;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 3000;
+}
+
+.fab {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* SHOW MOBILE */
+@media (max-width: 1100px) {
+  .floating-auth {
+    display: flex;
+  }
+}
+
+/* =========================================
+RESPONSIVE FIX
+========================================= */
+
+@media (max-width: 1024px) {
+  .assistant-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .chat-window {
+    height: 520px;
+  }
+}
+
+@media (max-width: 768px) {
+  .assistant-container {
+    padding: 35px 14px;
+  }
+
+  .chat-window {
+    height: 460px;
+  }
+
+  .chat-body {
+    padding: 18px;
+  }
+
+  .chat-footer {
+    padding: 14px;
+  }
+
+  .info-card,
+  .disclaimer-card {
+    padding: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .chat-window {
+    height: 420px;
+  }
+
+  .chat-body {
+    padding: 14px;
+  }
+}
+
+
+/* =========================================
+FOOTER
+========================================= */
+
+footer{
+background:#163d3d;
+padding:55px 20px;
+text-align:center;
+color:white;
+font-size:15px;
+}
+
+/* =========================================
+RESPONSIVE
+========================================= */
+
+@media(max-width:1100px){
+
+.top-bar{
+padding:0 18px;
+}
+
+.top-left{
+font-size:12px;
+}
+
+.top-right{
+gap:10px;
+}
+
+.clinic-btn{
+padding:8px 14px;
+font-size:12px;
+}
+
+.privacy{
+font-size:12px;
+}
+
+nav{
+top:52px;
+height:82px;
+padding:0 5%;
+}
+
+.menu-toggle{
+display:flex;
+}
+
+/* HIDE DESKTOP BUTTONS */
+
+.auth-buttons{
+display:none;
+}
+
+.mobile-auth{
+display:flex;
+}
+
+/* MOBILE MENU */
+
+.nav-links{
+position:absolute;
+top:82px;
+left:0;
+width:100%;
+background:white;
+display:none;
+flex-direction:column;
+align-items:flex-start;
+padding:28px 5%;
+gap:22px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+border-top:1px solid rgba(0,0,0,0.05);
+}
+
+.nav-links.active{
+display:flex;
+}
+
+.hero-title{
+font-size:54px;
+}
+
+}
+
+@media(max-width:768px){
+
+.top-bar{
+height:auto;
+padding:10px 14px;
+flex-direction:column;
+gap:10px;
+align-items:flex-start;
+}
+
+nav{
+top:88px;
+}
+
+.logo h1{
+font-size:26px;
+}
+
+.hero{
+padding-top:220px;
+padding-bottom:100px;
+height:auto;
+}
+
+.hero-title{
+font-size:42px;
+}
+
+.hero-desc{
+font-size:20px;
+}
+
+.hero-buttons{
+flex-direction:column;
+}
+
+.section-title{
+font-size:40px;
+}
+
+}
+
+.nav-links .mobile-auth{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  margin-top:20px;
+  width:100%;
+  
+}
+
+.mobile-auth{
+  display:flex;
+}
+
+.mobile-auth .login-btn,
+.mobile-auth .signup-btn,
+.mobile-auth .logout-btn{
+width:100%;
+text-align:center;
+}
+
+
+/* Footer Replica Styles - Professional Tighter Spacing */
+.vax-footer {
+    background-color: #f2eee8;
+    padding: 50px 10% 40px 10%; /* Reduced top/bottom padding for closeness */
+    color: #444;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.footer-brand {
+    max-width: 380px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px; /* Reduced from 25px */
+}
+
+.logo-icon {
+    background-color: #c95a3d;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    transform: rotate(-45deg);
+}
+
+.logo-text {
+    font-family: 'Georgia', serif;
+    font-size: 24px;
+    color: #1a1a1a;
+}
+
+.footer-brand p {
+    font-size: 14px; /* Slightly smaller for professional feel */
+    line-height: 1.5;
+    color: #666;
+}
+
+.footer-nav-group h4 {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #6b8a99;
+    text-transform: uppercase;
+    margin-bottom: 15px; /* Reduced from 25px */
+    border-bottom: 1px solid #dcd6ce;
+    display: inline-block;
+    padding-bottom: 4px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 8px; /* Reduced from 12px for tighter list */
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #555;
+    font-size: 13.5px;
+    transition: color 0.2s;
+}
+
+.footer-links a:hover {
+    color: #c95a3d;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px; /* Reduced from 15px */
+    font-size: 13.5px;
+    color: #555;
+}
+
+.contact-item i {
+    font-size: 15px;
+    color: #888;
+}
+
+.contact-item a {
+    text-decoration: underline;
+    color: #555;
+    text-decoration-color: #ccc;
+}
+
+@media (max-width: 768px) {
+    .vax-footer {
+        flex-direction: column;
+        padding: 40px 30px; /* Tighter mobile padding */
+        gap: 30px;
+    }
+}
+
+@media(max-width:768px){
+
+  .nutrition-section{
+    padding-top: 200px; /* FIX: prevents overlap with fixed nav */
+  }
+
+}
+
+
+
+</style>
+
+</head>
+
+<body>
+
+<!-- =========================================
+TOP BAR
+========================================= -->
+
+<div class="top-bar">
+
+<div class="top-left">
+✨ Pre-book at VaxClub → 7% off all vaccines · 20% off Influenza Vaccinate at VaxClub Partner Clinics
+</div>
+
+<div class="top-right">
+
+<a href="patner.html" class="clinic-btn">
+Find clinics →
+</a>
+
+<div class="privacy">
+<i class="fa-solid fa-lock"></i>
+Data-privacy first
+</div>
+
+</div>
+
+</div>
+
+<nav>
+
+  <a href="index.html" class="logo">
+
+  <div class="logo-circle">
+    <i class="fa-solid fa-syringe"></i>
+  </div>
+
+  <h1>VaxClub</h1>
+
+</a>
+
+  <div class="nav-links" id="mobileMenu">
+    <a href="drive.html">Drives</a>
+    <a href="patner.html">Partner Clinics</a>
+    <a href="vitual.html">Virtual Consult</a>
+    <a href="diet.html">Diet Chart</a>
+    <a href="vaccine.html">Vaccine Catalog</a>
+    <a href="blog.html">Blog</a>
+    <a href="saftety&faq.html">Safety & FAQ</a>
+    <a href="admin-login.html">
+      <i class="fa-solid fa-user-shield"></i> Admin
+    </a>
+  </div>
+
+  <!-- FIXED: AUTH OUTSIDE MENU -->
+  <div class="auth-buttons" id="desktopAuth">
+
+  <a href="login.html" class="login-btn">
+    <i class="fa-solid fa-right-to-bracket"></i> Login
+  </a>
+
+  <a href="signup.html" class="signup-btn">
+    <i class="fa-solid fa-user-plus"></i> Sign Up
+  </a>
+
+</div>
+  <!-- BURGER -->
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <i class="fa-solid fa-bars"></i>
+  </div>
+
+</nav>
+
+<!-- IMPORTANT: MOBILE AUTH OUTSIDE NAV -->
+<div class="mobile-auth"></div>
+
+<!-- FLOATING AUTH ICONS (MOBILE ONLY) -->
+<div class="floating-auth" id="floatingAuth">
+
+  <a href="login.html" class="fab login" title="Login">
+    <i class="fa-solid fa-right-to-bracket"></i>
+  </a>
+
+  <a href="signup.html" class="fab signup" title="Sign Up">
+    <i class="fa-solid fa-user-plus"></i>
+  </a>
+
+  <a href="#" class="fab logout" title="Logout" onclick="logoutUser()">
+    <i class="fa-solid fa-right-from-bracket"></i>
+  </a>
+
+</div>
+
+
+
+<!-- =========================================
+AI DISCLAIMER FOOTER CARD REPLICA
+========================================= -->
+
+
+
+<div class="floating">
+  <a href="https://wa.me/" class="whatsapp" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  <a href="#" class="chatbot">
+    <i class="fas fa-robot"></i>
+  </a>
+</div>
+
+<div id="chatbotBox" style="
+  position:fixed;
+  bottom:90px;
+  right:20px;
+  width:300px;
+  background:#fff;
+  border-radius:15px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.2);
+  display:none;
+  flex-direction:column;
+  overflow:hidden;
+  z-index:3000;
+">
+
+  <div style="background:#2f5d57;color:#fff;padding:10px;font-weight:500;">
+    VaxBot 🤖
+  </div>
+
+  <div id="chatMessages" style="
+    height:250px;
+    overflow-y:auto;
+    padding:10px;
+    font-size:13px;
+  ">
+    <div>👋 Hi! Ask me anything about vaccines.</div>
+  </div>
+
+  <div style="display:flex;border-top:1px solid #eee;">
+    <input id="chatInput" type="text" placeholder="Type a message..."
+      style="flex:1;border:none;padding:10px;font-size:13px;outline:none;">
+    <button id="sendBtn" style="
+      background:#c95a3d;
+      color:#fff;
+      border:none;
+      padding:10px 15px;
+      cursor:pointer;
+    ">Send</button>
+  </div>
+
+</div>
+
+<!-- Footer -->
+ 
+<footer class="vax-footer">
+    <!-- Brand Section -->
+    <div class="footer-brand">
+        <div class="footer-logo">
+            <div class="logo-icon"><i class="fas fa-syringe"></i></div>
+            <span class="logo-text">VaxClub</span>
+        </div>
+        <p>Board-certified pediatricians visiting your community clubhouse every weekend, making childhood vaccinations convenient, safe, and reassuring for every family.</p>
+    </div>
+
+    <!-- Explore Section -->
+    <div class="footer-nav-group">
+        <h4>Explore</h4>
+        <ul class="footer-links">
+            <li><a href="#">Weekend Drives</a></li>
+            <li><a href="#">Partner Clinics</a></li>
+            <li><a href="#">Vaccine Catalog</a></li>
+            <li><a href="#">Blog · Articles</a></li>
+            <li><a href="#">Safety & FAQ</a></li>
+            <li><a href="#">Privacy Commitment</a></li>
+            <li><a href="#">Financial Security</a></li>
+            <li><a href="#">Become a Partner</a></li>
+            <li><a href="#">Create Account</a></li>
+        </ul>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="footer-nav-group">
+        <h4>Contact</h4>
+        <div class="contact-item">
+            <i class="far fa-envelope"></i>
+            <a href="mailto:contact@vaxclub.com">Contact us</a>
+        </div>
+        <div class="contact-item">
+            <i class="far fa-comment"></i>
+            <span>Chat on WhatsApp</span>
+        </div>
+        <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Weekends at your clubhouse</span>
+        </div>
+    </div>
+</footer>
+
+<!-- =========================================
+FOOTER
+========================================= -->
+
+<footer>
+© 2026 VaxClub · Developed by SKR Tech solutions
+</footer>
+
+<!-- =========================================
+JAVASCRIPT
+========================================= -->
+
+<script>
+
+
+/* =========================================
+AUTH + UI STATE MANAGEMENT
+========================================= */
+
+function updateAuthUI() {
+
+  const user = JSON.parse(localStorage.getItem("loggedInUser"));
+
+  const desktopAuth = document.getElementById("desktopAuth");
+  const floatingAuth = document.getElementById("floatingAuth");
+
+  /* DESKTOP NAV */
+  if (desktopAuth) {
+    desktopAuth.innerHTML = user
+      ? `
+        <button class="logout-btn" onclick="logoutUser()">
+          <i class="fa-solid fa-right-from-bracket"></i> Logout
+        </button>
+      `
+      : `
+        <a href="login.html" class="login-btn">
+          <i class="fa-solid fa-right-to-bracket"></i> Login
+        </a>
+        <a href="signup.html" class="signup-btn">
+          <i class="fa-solid fa-user-plus"></i> Sign Up
+        </a>
+      `;
+  }
+
+  /* FLOATING MOBILE ICONS */
+  if (floatingAuth) {
+    floatingAuth.innerHTML = user
+      ? `
+        <a href="#" class="fab logout" onclick="logoutUser()">
+          <i class="fa-solid fa-right-from-bracket"></i>
+        </a>
+      `
+      : `
+        <a href="login.html" class="fab login">
+          <i class="fa-solid fa-right-to-bracket"></i>
+        </a>
+        <a href="signup.html" class="fab signup">
+          <i class="fa-solid fa-user-plus"></i>
+        </a>
+      `;
+  }
+
+  updateDietAccess();
+}
+
+/* =========================================
+DIET ACCESS CONTROL
+========================================= */
+
+function updateDietAccess() {
+
+  const user = JSON.parse(localStorage.getItem("loggedInUser"));
+
+  const savedPlans = document.getElementById("savedPlansContainer");
+  const customBtn = document.getElementById("customBtn");
+  const generateBtn = document.querySelector(".btn-generate");
+
+  /* saved plans */
+  if (savedPlans) {
+    savedPlans.style.display = user ? "block" : "none";
+  }
+
+  /* custom diet lock */
+  if (customBtn) {
+    if (!user) {
+      customBtn.style.opacity = "0.5";
+      customBtn.style.pointerEvents = "none";
+      customBtn.title = "Login required for custom diet";
+    } else {
+      customBtn.style.opacity = "1";
+      customBtn.style.pointerEvents = "auto";
+      customBtn.title = "";
+    }
+  }
+
+  /* generate button protection */
+  if (generateBtn) {
+    generateBtn.onclick = function () {
+      const user = JSON.parse(localStorage.getItem("loggedInUser"));
+
+      if (!user) {
+        alert("Please login to generate diet chart");
+        return;
+      }
+
+      alert("Generating diet chart...");
+    };
+  }
+}
+
+/* =========================================
+LOGIN
+========================================= */
+
+function login(event) {
+
+  event.preventDefault();
+
+  const email = document.getElementById("email")?.value.trim().toLowerCase();
+  const password = document.getElementById("password")?.value.trim();
+
+  let users = JSON.parse(localStorage.getItem("vaxUsers")) || [];
+
+  const validUser = users.find(u =>
+    u.email === email && u.password === password
+  );
+
+  if (!validUser) {
+    alert("Invalid credentials");
+    return;
+  }
+
+  localStorage.setItem("loggedInUser", JSON.stringify(validUser));
+
+  alert("Login successful!");
+
+  updateAuthUI();
+  window.location.href = "index.html";
+}
+
+/* =========================================
+LOGOUT
+========================================= */
+
+function logoutUser() {
+
+  localStorage.removeItem("loggedInUser");
+
+  alert("Logged out successfully");
+
+  updateAuthUI();
+}
+
+/* =========================================
+MOBILE MENU
+========================================= */
+
+function toggleMenu() {
+  document.getElementById("mobileMenu")?.classList.toggle("active");
+}
+
+/* =========================================
+DIET SECTION TOGGLE
+========================================= */
+
+function showDietSection(type) {
+
+  const familySection = document.getElementById("familySection");
+  const customSection = document.getElementById("customSection");
+
+  const familyBtn = document.getElementById("familyBtn");
+  const customBtn = document.getElementById("customBtn");
+
+  if (type === "family") {
+
+    familySection.style.display = "block";
+    customSection.style.display = "none";
+
+    familyBtn.classList.add("active");
+    customBtn.classList.remove("active");
+
+  } else {
+
+    familySection.style.display = "none";
+    customSection.style.display = "block";
+
+    customBtn.classList.add("active");
+    familyBtn.classList.remove("active");
+  }
+}
+
+/* =========================================
+INIT
+========================================= */
+
+window.addEventListener("load", updateAuthUI);
+
+/* =========================================
+CHATBOT
+========================================= */
+
+const chatbotBtn = document.querySelector(".chatbot");
+const chatbotBox = document.getElementById("chatbotBox");
+const sendBtn = document.getElementById("sendBtn");
+const chatInput = document.getElementById("chatInput");
+const chatMessages = document.getElementById("chatMessages");
+
+/* toggle */
+chatbotBtn?.addEventListener("click", (e) => {
+  e.preventDefault();
+  chatbotBox.style.display =
+    chatbotBox.style.display === "flex" ? "none" : "flex";
+});
+
+/* send */
+sendBtn?.addEventListener("click", sendMessage);
+
+chatInput?.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") sendMessage();
+});
+
+function sendMessage() {
+
+  const userText = chatInput.value.trim();
+  if (!userText) return;
+
+  addMessage("You", userText);
+  chatInput.value = "";
+
+  let reply = "I’m here to help!";
+
+  if (userText.toLowerCase().includes("vaccine")) {
+    reply = "Vaccines help your body fight diseases safely.";
+  } else if (userText.toLowerCase().includes("price")) {
+    reply = "Prices vary by clinic. Use Find Clinics.";
+  } else if (userText.toLowerCase().includes("appointment")) {
+    reply = "You can book appointments from homepage.";
+  }
+
+  setTimeout(() => addMessage("VaxBot", reply), 500);
+}
+
+function addMessage(sender, text) {
+
+  const msg = document.createElement("div");
+  msg.style.marginBottom = "8px";
+  msg.innerHTML = `<strong>${sender}:</strong> ${text}`;
+
+  chatMessages.appendChild(msg);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+
+</script>
+</body>
+</html>

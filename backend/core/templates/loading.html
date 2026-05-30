@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon"
+href="{% static 'images/vaxclub-logo.png' %}">
+
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>VaxClub Loading</title>
+
+<link rel="stylesheet"
+href="{% static 'css/loading.css' %}">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+</head>
+
+<body>
+
+<div class="loader-container">
+
+    <div class="logo-circle">
+
+        <i class="fa-solid fa-shield-virus"></i>
+
+    </div>
+
+    <h1>VaxClub</h1>
+
+    <p>
+        Protecting Families with Smart Vaccination
+    </p>
+
+    <div class="loader"></div>
+
+</div>
+
+<script src="{% static 'js/loading.js' %}"></script>
+
+</body>
+</html>

@@ -1,0 +1,588 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<link rel="icon"
+href="{% static 'images/vaxclub-logo.png' %}">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VaxClub Profile</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Inter', sans-serif;
+    background:#f4f7fb;
+    min-height:100vh;
+    padding:40px 20px;
+    color:#111;
+}
+
+/* CONTAINER */
+
+.profile-container{
+    max-width:1200px;
+    margin:auto;
+}
+
+/* PROFILE TOP */
+
+.profile-top{
+    background:#fff;
+    border-radius:25px;
+    padding:35px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:25px;
+    box-shadow:0 10px 35px rgba(0,0,0,0.08);
+}
+
+.profile-left{
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+
+.profile-avatar{
+    width:100px;
+    height:100px;
+    border-radius:50%;
+    background:#2f5d57;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:38px;
+}
+
+.profile-info h2{
+    font-size:34px;
+    margin-bottom:10px;
+}
+
+.profile-info p{
+    color:#666;
+    margin-bottom:8px;
+}
+
+.member-badge{
+    display:inline-block;
+    margin-top:10px;
+    background:#e8f4f1;
+    color:#2f5d57;
+    padding:8px 18px;
+    border-radius:30px;
+    font-size:14px;
+    font-weight:600;
+}
+
+/* BUTTONS */
+
+.profile-actions{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:14px 24px;
+    border-radius:14px;
+    text-decoration:none;
+    color:#fff;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.home-btn{
+    background:#2f5d57;
+}
+
+.logout-btn{
+    background:#d66745;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+}
+
+/* TITLE */
+
+.dashboard-title{
+    margin:45px 0 30px;
+}
+
+.dashboard-title h1{
+    font-size:46px;
+    margin-bottom:10px;
+}
+
+.dashboard-title p{
+    color:#666;
+    font-size:18px;
+}
+
+/* STATS GRID */
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+    margin-top:20px;
+}
+
+/* CHILD GRID */
+
+.children-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+    margin-top:20px;
+}
+
+/* CARDS */
+
+.stat-card{
+    background:#fff;
+    padding:30px;
+    border-radius:22px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.06);
+    transition:0.3s;
+}
+
+.stat-card:hover{
+    transform:translateY(-5px);
+}
+
+.stat-card i{
+    font-size:32px;
+    color:#2f5d57;
+    margin-bottom:20px;
+}
+
+.stat-card h2{
+    font-size:28px;
+    margin-bottom:10px;
+}
+
+.stat-card p{
+    color:#666;
+    margin-top:8px;
+}
+
+/* LOWER GRID */
+
+.dashboard-grid{
+    margin-top:35px;
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:25px;
+}
+
+.dashboard-card{
+    background:#fff;
+    padding:30px;
+    border-radius:22px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.06);
+    margin-top:30px;
+}
+
+.dashboard-card h3{
+    margin-bottom:20px;
+    font-size:24px;
+}
+
+/* PROGRESS BAR */
+
+.progress-bar{
+    width:100%;
+    height:14px;
+    background:#eee;
+    border-radius:30px;
+    overflow:hidden;
+    margin-top:15px;
+}
+
+.progress{
+    width:70%;
+    height:100%;
+    background:#2f5d57;
+}
+
+/* APPOINTMENT CARD */
+
+.appointment-card{
+    background:#f4f7fb;
+    padding:18px;
+    border-radius:15px;
+    margin-top:15px;
+}
+
+.appointment-card h4{
+    margin-bottom:10px;
+}
+
+/* QUICK LINKS */
+
+.quick-links{
+    margin-top:20px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+.quick-links a{
+    text-decoration:none;
+    background:#f4f7fb;
+    padding:12px 18px;
+    border-radius:12px;
+    color:#2f5d57;
+    font-weight:600;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    body{
+        padding:20px 15px;
+    }
+
+    .profile-top{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .profile-left{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .dashboard-grid{
+        grid-template-columns:1fr;
+    }
+
+    .dashboard-title h1{
+        font-size:32px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="profile-container">
+
+```
+<!-- PROFILE -->
+
+<div class="profile-top">
+
+    <div class="profile-left">
+
+        <div class="profile-avatar">
+            <i class="fa-solid fa-user"></i>
+        </div>
+
+        <div class="profile-info">
+
+            <h2>{{ user.username }}</h2>
+
+            <p>{{ user.email }}</p>
+
+            <p>
+                Joined:
+                {{ user.date_joined }}
+            </p>
+
+            <div class="member-badge">
+                VaxClub Member
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="profile-actions">
+
+        <a href="{% url 'index' %}" class="btn home-btn">
+            <i class="fa-solid fa-house"></i>
+            Home
+        </a>
+
+        <a href="{% url 'logout' %}" class="btn logout-btn">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            Logout
+        </a>
+
+    </div>
+
+</div>
+
+<!-- TITLE -->
+
+<div class="dashboard-title">
+
+    <h1>
+        Welcome back,
+        {{ user.username }} 👋
+    </h1>
+
+    <p>
+        Your family vaccination dashboard
+    </p>
+
+</div>
+
+<!-- STATS -->
+
+<div class="stats-grid">
+
+    <div class="stat-card">
+
+        <i class="fa-solid fa-syringe"></i>
+
+        <h2>{{ total_vaccines }}</h2>
+
+        <p>Vaccines Taken</p>
+
+    </div>
+
+    <div class="stat-card">
+
+        <i class="fa-solid fa-child"></i>
+
+        <h2>{{ total_children }}</h2>
+
+        <p>Children Added</p>
+
+    </div>
+
+    <div class="stat-card">
+
+        <i class="fa-solid fa-calendar"></i>
+
+        <h2>{{ total_bookings }}</h2>
+
+        <p>Total Bookings</p>
+
+    </div>
+
+</div>
+
+<!-- LOWER SECTION -->
+
+<div class="dashboard-grid">
+
+    <!-- LEFT -->
+
+    <div class="dashboard-card">
+
+        <h3>Vaccination Progress</h3>
+
+        <p>
+            Child Vaccination Progress
+            <strong>70%</strong>
+        </p>
+
+        <div class="progress-bar">
+            <div class="progress"></div>
+        </div>
+
+        <div class="appointment-card">
+
+            <h4>
+                💉 Upcoming Vaccine
+            </h4>
+
+            <p style="font-size:22px; font-weight:700; margin-top:10px;">
+                MMR Vaccine
+            </p>
+
+            <p style="margin-top:10px; color:#d66745; font-weight:600;">
+                Due in 5 days
+            </p>
+
+            <div class="progress-bar" style="margin-top:18px;">
+
+                <div class="progress"
+                style="width:85%; background:#d66745;">
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- RIGHT -->
+
+    <div class="dashboard-card">
+
+        <h3>Quick Access</h3>
+
+        <div class="quick-links">
+
+            <a href="{% url 'blog' %}">
+                📖 Blog
+            </a>
+
+            <a href="{% url 'vaccine' %}">
+                💉 Vaccines
+            </a>
+
+            <a href="{% url 'drive' %}">
+                📅 Drives
+            </a>
+
+            <a href="{% url 'virtual' %}">
+                🤖 AI Consult
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- CHILDREN -->
+
+<div class="dashboard-card">
+
+    <h3>Your Children</h3>
+
+    <div class="children-grid">
+
+        {% for child in children %}
+
+        <div class="stat-card">
+
+            <i class="fa-solid fa-child-reaching"></i>
+
+            <h2>{{ child.child_name }}</h2>
+
+            <p>
+                Age: {{ child.age }}
+            </p>
+
+            <p>
+                Gender: {{ child.gender }}
+            </p>
+
+            <div class="member-badge">
+                Next Vaccine: Polio
+            </div>
+
+        </div>
+
+        {% empty %}
+
+        <p>No child profiles added yet.</p>
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+<!-- VACCINES -->
+
+<div class="dashboard-card">
+
+    <h3>Vaccination Records</h3>
+
+    {% for vaccine in vaccines %}
+
+    <div class="appointment-card">
+
+        <h4>{{ vaccine.vaccine_name }}</h4>
+
+        <p>
+            Date:
+            {{ vaccine.date_taken }}
+        </p>
+
+        <p>
+            Doctor:
+            {{ vaccine.doctor_name }}
+        </p>
+
+    </div>
+
+    {% empty %}
+
+    <p>No vaccine records found.</p>
+
+    {% endfor %}
+
+</div>
+
+<!-- BOOKINGS -->
+
+<div class="dashboard-card">
+
+    <h3>Upcoming Bookings</h3>
+
+    {% for booking in bookings %}
+
+    <div class="appointment-card">
+
+        <h4>{{ booking.child.child_name }}</h4>
+
+        <p>
+            Location:
+            {{ booking.drive.location }}
+        </p>
+
+        <p>
+            Date:
+            {{ booking.booking_date }}
+        </p>
+
+        <p>
+            Status:
+            {{ booking.status }}
+        </p>
+
+    </div>
+
+    {% empty %}
+
+    <p>No bookings available.</p>
+
+    {% endfor %}
+
+</div>
+```
+
+</div>
+
+<script>
+
+console.log("Profile Dashboard Loaded Successfully");
+
+</script>
+
+</body>
+</html>

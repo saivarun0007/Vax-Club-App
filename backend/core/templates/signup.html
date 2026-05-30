@@ -1,0 +1,151 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Account - VaxClub</title>
+
+    <!-- GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="signup-navbar">
+
+    <a href="{% url 'index' %}" class="logo">
+
+        <div class="logo-circle">
+            <i class="fa-solid fa-syringe"></i>
+        </div>
+
+        <h1>VaxClub</h1>
+
+    </a>
+
+    <a href="{% url 'index' %}" class="back-btn">
+
+        <i class="fa-solid fa-arrow-left"></i>
+
+        Back Home
+
+    </a>
+
+</nav>
+
+<!-- MAIN -->
+
+<section class="signup-section">
+
+    <div class="signup-card">
+
+        <div class="signup-icon">
+            <i class="fa-solid fa-user-plus"></i>
+        </div>
+
+        <small>CREATE ACCOUNT</small>
+
+        <h1>
+            Join
+            <span>VaxClub</span>
+        </h1>
+
+        <p>
+            Create your secure healthcare account to manage
+            vaccination records, appointments, and family health tracking.
+        </p>
+
+        <!-- ERROR MESSAGE -->
+
+        {% if error %}
+        <p class="error-msg">{{ error }}</p>
+        {% endif %}
+
+        <!-- FORM -->
+
+        <form method="POST" class="signup-form">
+
+            {% csrf_token %}
+
+            <div class="input-group">
+
+                <i class="fa-solid fa-user"></i>
+
+                <input 
+                    type="text"
+                    name="username"
+                    placeholder="Enter username"
+                    required
+                >
+
+            </div>
+
+            <div class="input-group">
+
+                <i class="fa-solid fa-envelope"></i>
+
+                <input 
+                    type="email"
+                    name="email"
+                    placeholder="Enter email"
+                    required
+                >
+
+            </div>
+
+            <div class="input-group">
+
+                <i class="fa-solid fa-lock"></i>
+
+                <input 
+                    type="password"
+                    name="password"
+                    placeholder="Create password"
+                    required
+                >
+
+            </div>
+
+            <button type="submit" class="signup-btn">
+
+                <i class="fa-solid fa-user-check"></i>
+
+                Create Account
+
+            </button>
+
+        </form>
+
+        <div class="login-link">
+
+            Already have an account?
+
+            <a href="{% url 'login' %}">
+                Login
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- JS -->
+<script src="{% static 'js/signup.js' %}"></script>
+
+</body>
+</html>

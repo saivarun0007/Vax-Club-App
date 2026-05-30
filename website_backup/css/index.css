@@ -1,0 +1,2120 @@
+
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Inter',sans-serif;
+background:#faf8f5;
+color:#222;
+overflow-x:hidden;
+}
+
+/* =========================================
+TOP BAR
+========================================= */
+
+.top-bar{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:52px;
+background:#2f6b63;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:0 28px;
+z-index:2000;
+}
+
+.top-left{
+display:flex;
+align-items:center;
+gap:10px;
+color:white;
+font-size:14px;
+font-weight:400;
+}
+
+.top-right{
+display:flex;
+align-items:center;
+gap:16px;
+}
+
+.clinic-btn{
+background:white;
+padding:10px 20px;
+border-radius:30px;
+text-decoration:none;
+color:#2f6b63;
+font-size:14px;
+font-weight:600;
+display:flex;
+align-items:center;
+gap:8px;
+transition:0.3s;
+}
+
+.clinic-btn:hover{
+transform:translateY(-2px);
+}
+
+.privacy{
+display:flex;
+align-items:center;
+gap:8px;
+color:white;
+font-size:14px;
+}
+
+.top-bar {
+  height: 52px; /* Keep this consistent */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2000;
+}
+
+nav {
+  position: fixed;
+  top: 52px; /* This MUST match the height of the top-bar */
+  height: 82px;
+  width: 100%;
+  z-index: 1500;
+}
+
+/* =========================================
+NAVBAR
+========================================= */
+
+nav{
+position:fixed;
+top:52px;
+left:0;
+width:100%;
+height:82px;
+background:rgba(255,255,255,0.96);
+backdrop-filter:blur(12px);
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:0 6%;
+z-index:1500;
+border-bottom:1px solid rgba(0,0,0,0.05);
+}
+
+/* LOGO */
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  text-decoration:none;
+  color:inherit;
+}
+
+.logo-circle{
+width:44px;
+height:44px;
+border-radius:50%;
+background:#d36b4b;
+display:flex;
+justify-content:center;
+align-items:center;
+color:white;
+font-size:17px;
+}
+
+.logo h1{
+font-size:30px;
+font-family:'Cormorant Garamond',serif;
+font-weight:700;
+color:#222;
+}
+
+/* NAV LINKS */
+
+.nav-links{
+display:flex;
+align-items:center;
+gap:28px;
+}
+
+.nav-links a{
+text-decoration:none;
+font-size:15px;
+color:#555;
+font-weight:500;
+transition:0.3s;
+}
+
+.nav-links a:hover{
+color:#d36b4b;
+}
+
+/* AUTH BUTTONS */
+
+.auth-buttons{
+display:flex;
+align-items:center;
+gap:14px;
+}
+
+.login-btn,
+.signup-btn,
+.logout-btn{
+padding:12px 24px;
+border-radius:40px;
+font-size:15px;
+font-weight:600;
+cursor:pointer;
+transition:0.3s;
+border:none;
+}
+
+.login-btn{
+background:#f1f1f1;
+color:#333;
+}
+
+.signup-btn{
+background:#d36b4b;
+color:white;
+}
+
+.logout-btn{
+background:#c62828;
+color:white;
+}
+
+.login-btn:hover,
+.signup-btn:hover,
+.logout-btn:hover{
+transform:translateY(-2px);
+}
+
+/* BURGER MENU */
+
+.menu-toggle{
+display:none;
+width:44px;
+height:44px;
+border-radius:12px;
+justify-content:center;
+align-items:center;
+cursor:pointer;
+font-size:22px;
+color:#222;
+transition:0.3s;
+}
+
+.menu-toggle:hover{
+background:#f2f2f2;
+}
+
+
+.floating{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  z-index:2500;
+}
+
+.floating a{
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  font-size:20px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.15);
+  transition:all 0.3s ease;
+}
+
+/* WhatsApp */
+.whatsapp{
+  background:#25D366;
+  color:#fff;
+}
+
+/* Chatbot */
+.chatbot{
+  background:#2f4e5d;
+  color:#fff;
+}
+
+/* Hover Effects */
+.floating a:hover{
+  transform:translateY(-4px) scale(1.05);
+  box-shadow:0 10px 25px rgba(0,0,0,0.25);
+}
+
+/* =========================================
+FLOATING AUTH ICONS (MOBILE)
+========================================= */
+
+.floating-auth{
+  position:fixed;
+  bottom:160px;
+  right:18px;
+  display:none;
+  flex-direction:column;
+  gap:12px;
+  z-index:3000;
+}
+
+/* icon buttons */
+.fab{
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  font-size:18px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.15);
+  transition:0.3s;
+  background:#fff;
+  color:#333;
+}
+
+/* individual colors */
+.fab.login{
+  color:#2f6b63;
+}
+
+.fab.signup{
+  color:#d36b4b;
+}
+
+.fab.logout{
+  color:#c62828;
+}
+
+/* hover effect */
+.fab:hover{
+  transform:translateY(-4px) scale(1.05);
+}
+
+/* show only on mobile */
+@media(max-width:1100px){
+  .floating-auth{
+    display:flex;
+  }
+}
+
+/* =========================================
+HERO
+========================================= */
+
+.hero{
+height:100vh;
+display:flex;
+align-items:center;
+padding:180px 8% 100px;
+position:relative;
+background:
+linear-gradient(
+rgba(255,255,255,0.82),
+rgba(255,255,255,0.82)
+),
+url('https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=1974&auto=format&fit=crop');
+
+background-size:cover;
+background-position:center;
+}
+
+.hero-content{
+max-width:720px;
+}
+
+.hero-sub{
+font-size:13px;
+letter-spacing:3px;
+font-weight:700;
+color:#6f95af;
+margin-bottom:24px;
+}
+
+.hero-title{
+font-family:'Cormorant Garamond',serif;
+font-size:68px;
+line-height:1.05;
+font-weight:600;
+margin-bottom:26px;
+color:#222;
+}
+
+.hero-title span{
+color:#d36b4b;
+}
+
+.badges{
+display:flex;
+gap:12px;
+margin-bottom:30px;
+flex-wrap:wrap;
+}
+
+.badge{
+padding:9px 18px;
+background:#f1ece6;
+border-radius:30px;
+font-size:12px;
+font-weight:700;
+color:#555;
+}
+
+.hero-desc{
+font-family:'Cormorant Garamond',serif;
+font-size:24px;
+line-height:1.6;
+color:#35545a;
+margin-bottom:34px;
+}
+
+.hero-desc span{
+color:#d36b4b;
+font-style:italic;
+}
+
+.hero-buttons{
+display:flex;
+gap:18px;
+flex-wrap:wrap;
+}
+
+.hero-btn{
+padding:15px 28px;
+border-radius:40px;
+font-size:15px;
+font-weight:600;
+cursor:pointer;
+border:none;
+transition:0.3s;
+}
+
+.primary-btn{
+background:#d36b4b;
+color:white;
+}
+
+.secondary-btn{
+background:white;
+border:1px solid #ddd;
+color:#222;
+}
+
+.hero-btn:hover{
+transform:translateY(-2px);
+}
+
+/* =========================================
+SECTIONS
+========================================= */
+
+/* Container Styles */
+.vaxcare-hero {
+    background-color: #F8F5F2; /* Off-white background from image */
+    padding: 80px 40px;
+    font-family: 'Inter', sans-serif; /* Use a clean sans-serif */
+}
+
+.vaxcare-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+/* Typography */
+.content-left {
+    flex: 1;
+}
+
+.sub-headline {
+    color: #8E9A9D;
+    font-size: 14px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    border-top: 1.5px solid #8E9A9D;
+    padding-top: 5px;
+}
+
+.main-title {
+    font-size: 48px;
+    color: #2C3E50;
+    line-height: 1.1;
+    margin: 20px 0;
+    font-weight: 500;
+}
+
+.italic-text {
+    font-style: italic;
+    color: #B25B44; /* Rust/Orange color from image */
+    font-family: serif; /* Serif for the italic accent */
+}
+
+.description {
+    color: #5D6D7E;
+    max-width: 450px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+/* Button */
+.cta-button {
+    background-color: #C06146;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* FAQ Cards Section */
+.faq-cards {
+    display: flex;
+    gap: 15px;
+    flex: 1.2;
+}
+
+.card {
+    flex: 1;
+    padding: 25px;
+    border-radius: 20px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.card-orange { background-color: #FFF2F0; border-top: 5px solid #E67E22; }
+.card-green { background-color: #EFF8F2; border-top: 5px solid #27AE60; }
+.card-beige { background-color: #F2EDE4; border-top: 5px solid #34495E; }
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    color: #7F8C8D;
+}
+
+.card-text {
+    font-size: 18px;
+    color: #2C3E50;
+    font-family: serif;
+    margin: 15px 0;
+}
+
+.get-answer {
+    text-decoration: none;
+    font-size: 14px;
+    color: #7F8C8D;
+    transition: 0.3s;
+}
+
+.get-answer:hover {
+    color: #C06146;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .vaxcare-container { flex-direction: column; }
+    .faq-cards { width: 100%; overflow-x: auto; }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+
+    .vaxcare-container {
+        flex-direction: column;
+    }
+
+    .faq-cards {
+        width: 100%;
+        display: flex;
+        flex-direction: column; /* Stack cards vertically */
+        gap: 20px;
+        overflow-x: unset;
+    }
+
+    .card {
+        width: 100%;
+        height: auto;
+        min-height: 180px;
+    }
+}
+
+/* =========================================
+DIET & SERVICES SECTION
+========================================= */
+
+/* DIET & SERVICES SECTION */
+.diet-section {
+    background: #fdfcfb;
+    padding: 60px 40px;
+    color: #333;
+}
+
+.diet-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Upper Part: Diet Chart */
+.diet-hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.diet-text {
+    flex: 1;
+}
+
+.diet-text small {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #6b8a99;
+    letter-spacing: 1.5px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.diet-text h2 {
+    font-family: 'Georgia', serif;
+    font-size: 42px;
+    font-weight: 400;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.diet-text h2 span {
+    color: #c95a3d;
+    font-style: italic;
+}
+
+.diet-text p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    max-width: 500px;
+}
+
+.diet-btns {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-diet-primary {
+    background: #c95a3d;
+    color: #fff;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-diet-outline {
+    background: transparent;
+    border: 1px solid #ddd;
+    color: #333;
+    padding: 14px 28px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+/* Diet Table Card */
+.diet-sample-card {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 20px;
+    padding: 25px;
+    width: 400px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+}
+
+.sample-header {
+    font-size: 11px;
+    color: #888;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.diet-row {
+    display: flex;
+    margin-bottom: 15px;
+    font-size: 13px;
+}
+
+.diet-time {
+    width: 80px;
+    color: #aaa;
+    font-size: 11px;
+}
+
+.diet-food {
+    color: #444;
+    flex: 1;
+}
+
+.sample-footer {
+    font-size: 11px;
+    font-style: italic;
+    color: #bbb;
+    margin-top: 15px;
+}
+
+/* Lower Cards */
+.service-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.s-card {
+    background: #fff;
+    border: 1px solid #eee;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.s-card small {
+    color: #6b8a99;
+    letter-spacing: 1px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.s-card h3 {
+    font-family: 'Georgia', serif;
+    font-size: 26px;
+    margin: 15px 0;
+    font-weight: 400;
+}
+
+.s-card p {
+    color: #777;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.s-card a {
+    color: #c95a3d;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+@media(max-width: 900px) {
+    .diet-hero, .service-cards {
+        flex-direction: column;
+        grid-template-columns: 1fr;
+    }
+    .diet-sample-card {
+        width: 100%;
+    }
+}
+
+/* =========================================
+NEW MEMBERSHIP REPLICA SECTION
+========================================= */
+
+.membership-section {
+    background: #2a4a45; /* Dark teal/green background from image */
+    padding: 80px 40px;
+    color: #fff;
+    border-radius: 20px;
+    margin: 40px;
+}
+
+.membership-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+
+.membership-left {
+    flex: 1.2;
+}
+
+.membership-left small {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #a8b8b5;
+    letter-spacing: 1.5px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.membership-left h2 {
+    font-family: 'Georgia', serif;
+    font-size: 48px;
+    line-height: 1.1;
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+
+.membership-left p {
+    color: #a8b8b5;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 35px;
+    max-width: 550px;
+}
+
+.membership-btns {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-join {
+    background: #c95a3d;
+    color: #fff;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.btn-prices {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.membership-cards {
+    flex: 0.8;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.benefit-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.benefit-card h4 {
+    font-family: 'Georgia', serif;
+    font-size: 28px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.benefit-card p {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #a8b8b5;
+}
+
+@media(max-width:768px){
+  .vaxcare-container, .membership-container {
+    flex-direction:column;
+  }
+  .vaxcare-left h2, .membership-left h2{
+    font-size:32px;
+  }
+  .vaxcare-cards, .membership-btns{
+    flex-direction:column;
+  }
+}
+
+/* =========================================
+Club House SECTION
+========================================= */
+
+.clubhouse-section {
+    background: #f8f8f8;
+    padding: 60px 40px;
+}
+
+.clubhouse-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: stretch;
+    gap: 25px;
+}
+
+.clubhouse-card-left {
+    flex: 1;
+    background: #fff;
+    border-radius: 24px;
+    padding: 60px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.clubhouse-card-left .icon-home {
+    color: #c95a3d;
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+
+.clubhouse-card-left h2 {
+    font-family: 'Georgia', serif;
+    font-size: 32px;
+    font-weight: 400;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.clubhouse-card-left p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.clubhouse-image-right {
+    flex: 1;
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+.clubhouse-image-right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+@media(max-width: 900px) {
+    .clubhouse-container {
+        flex-direction: column;
+    }
+    .clubhouse-card-left {
+        padding: 40px;
+    }
+}
+
+/* REPLICA FEATURE CARDS (THE LOWER THREE) */
+.feature-row {
+    background: #f8f8f8;
+    padding: 0 40px 60px 40px;
+}
+
+.feature-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.f-card {
+    background: #fff;
+    border: 1px solid #eee;
+    padding: 35px 30px;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.f-card .f-icon {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #c95a3d;
+}
+
+.f-card h3 {
+    font-family: 'Georgia', serif;
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 15px;
+    color: #1a1a1a;
+}
+
+.f-card p {
+    color: #777;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+
+    .feature-container {
+        grid-template-columns: 1fr; /* One card per row */
+        gap: 20px;
+    }
+
+    .f-card {
+        width: 100%;
+    }
+
+}
+
+/* =========================================
+REPLICA FROM IMAGE - UPCOMING DRIVES
+========================================= */
+
+.upcoming-drives {
+    background: #f1ede6; /* Beige background from image */
+    padding: 100px 40px 80px 40px;
+}
+
+.upcoming-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.upcoming-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 20px;
+}
+
+.upcoming-header-left small {
+    color: #6b8a99;
+    letter-spacing: 1px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-bottom: 1px solid #6b8a99;
+    padding-bottom: 3px;
+}
+
+.upcoming-header-left h2 {
+    font-family: 'Georgia', serif;
+    font-size: 42px;
+    font-weight: 400;
+    margin-top: 20px;
+    color: #1a1a1a;
+}
+
+.btn-see-all {
+    border: 1px solid #ddd;
+    background: transparent;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 13px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.upcoming-footer-text {
+    font-style: italic;
+    color: #999;
+    font-size: 14px;
+    margin-top: 30px;
+}
+
+
+/* REPLICA FROM IMAGE - MEET PEDIATRICIANS */
+.meet-pediatricians {
+    background: #fff;
+    padding: 100px 40px;
+}
+
+.meet-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 60px;
+}
+
+.meet-left {
+    flex: 1;
+}
+
+.meet-left small {
+    color: #6b8a99;
+    letter-spacing: 1px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-bottom: 1px solid #6b8a99;
+    padding-bottom: 3px;
+}
+
+.meet-left h2 {
+    font-family: 'Georgia', serif;
+    font-size: 42px;
+    font-weight: 400;
+    margin-top: 20px;
+    color: #1a1a1a;
+}
+
+.meet-right {
+    flex: 1;
+    padding-top: 45px;
+}
+
+.meet-right p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.home-drive-card{
+
+  background:#fff;
+
+  border-radius:24px;
+
+  padding:24px;
+
+  margin-top:20px;
+
+  border:1px solid #ECE7E2;
+}
+
+.home-drive-card h3{
+
+  margin-bottom:10px;
+
+  font-size:24px;
+}
+
+/* =========================================
+HOME DRIVE CARDS
+========================================= */
+
+.home-drive-card{
+
+  background:#fff;
+
+  border-radius:24px;
+
+  padding:28px;
+
+  margin-top:25px;
+
+  box-shadow:0 4px 18px rgba(0,0,0,0.05);
+}
+
+.home-drive-card h3{
+
+  font-size:24px;
+
+  margin-bottom:10px;
+}
+
+.home-drive-meta{
+
+  display:flex;
+
+  gap:18px;
+
+  margin:16px 0;
+
+  flex-wrap:wrap;
+}
+
+.home-drive-section{
+
+  margin-top:20px;
+}
+
+.home-drive-section h4{
+
+  font-size:13px;
+
+  text-transform:uppercase;
+
+  color:#64748B;
+
+  margin-bottom:10px;
+}
+
+.home-pill-wrap{
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:10px;
+}
+
+.home-pill{
+
+  background:#EEF2F7;
+
+  padding:8px 14px;
+
+  border-radius:999px;
+
+  font-size:13px;
+}
+
+.home-pill.vaccine{
+
+  background:#E8F5E9;
+
+  color:#166534;
+}
+
+/* =========================================
+PEDIATRICIAN GRID
+========================================= */
+
+.pediatrician-grid{
+    max-width:1200px;
+    margin:80px auto;
+    padding:0 40px;
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+}
+
+/* CARD */
+
+.doctor-card{
+    background:#fff;
+    border-radius:24px;
+    overflow:hidden;
+    border:1px solid #eee;
+    box-shadow:0 10px 30px rgba(0,0,0,0.05);
+    transition:0.3s;
+    width:100%;
+}
+
+.doctor-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 20px 40px rgba(0,0,0,0.08);
+}
+
+/* IMAGE */
+
+.image-wrapper{
+    width:100%;
+    height:320px;
+    overflow:hidden;
+    background:#f3f3f3;
+}
+
+.image-wrapper img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+/* CONTENT */
+
+.card-body{
+    padding:25px;
+}
+
+.role-tag{
+    font-size:11px;
+    letter-spacing:1.5px;
+    color:#6b8a99;
+    font-weight:700;
+    text-transform:uppercase;
+    border-bottom:1px solid #eee;
+    padding-bottom:8px;
+    display:inline-block;
+    margin-bottom:14px;
+}
+
+.doctor-card h3{
+    font-family:'Georgia',serif;
+    font-size:24px;
+    font-weight:400;
+    color:#1a1a1a;
+    margin-bottom:12px;
+}
+
+.qualifications{
+    font-size:13px;
+    color:#666;
+    line-height:1.5;
+    margin-bottom:10px;
+}
+
+.specialty{
+    font-size:13px;
+    color:#888;
+    font-style:italic;
+    margin-bottom:20px;
+}
+
+.exp-badge{
+    display:inline-block;
+    background:#eff3f5;
+    color:#4a636e;
+    padding:8px 16px;
+    border-radius:50px;
+    font-size:11px;
+    font-weight:600;
+}
+
+
+/* =========================================
+REPLICA FROM IMAGE - UPCOMING DRIVES
+========================================= */
+
+.upcoming-drives {
+    background: #f1ede6; /* Beige background from image */
+    padding: 100px 40px 80px 40px;
+}
+
+.upcoming-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.upcoming-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 20px;
+}
+
+.upcoming-header-left small {
+    color: #6b8a99;
+    letter-spacing: 1px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-bottom: 1px solid #6b8a99;
+    padding-bottom: 3px;
+}
+
+.upcoming-header-left h2 {
+    font-family: 'Georgia', serif;
+    font-size: 42px;
+    font-weight: 400;
+    margin-top: 20px;
+    color: #1a1a1a;
+}
+
+.btn-see-all {
+    border: 1px solid #ddd;
+    background: transparent;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 13px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.upcoming-footer-text {
+    font-style: italic;
+    color: #999;
+    font-size: 14px;
+    margin-top: 30px;
+}
+
+
+/* =========================================
+MEET PEDIATRICIANS SECTION
+========================================= */
+
+.meet-pediatricians{
+    background:#fff;
+    padding:100px 40px;
+}
+
+.meet-container{
+    max-width:1100px;
+    margin:0 auto;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+
+    align-items:start;
+}
+
+.meet-left h2{
+    font-family:'Georgia',serif;
+    font-size:48px;
+    line-height:1.1;
+    font-weight:400;
+    margin-top:20px;
+}
+
+.meet-right{
+    padding-top:40px;
+}
+
+.meet-right p{
+    font-size:16px;
+    line-height:1.8;
+    color:#666;
+}
+
+/* =========================================
+TABLET
+========================================= */
+
+@media(max-width:992px){
+
+    .pediatrician-grid{
+        grid-template-columns:repeat(2,1fr);
+        padding:0 30px;
+    }
+
+    .meet-container{
+        grid-template-columns:1fr;
+        gap:25px;
+    }
+
+    .meet-right{
+        padding-top:0;
+    }
+
+    .meet-left h2{
+        font-size:42px;
+    }
+
+}
+
+/* =========================================
+MOBILE
+========================================= */
+
+@media(max-width:768px){
+
+    .meet-pediatricians{
+        padding:70px 20px;
+    }
+
+    .meet-container{
+        grid-template-columns:1fr;
+        gap:20px;
+    }
+
+    .meet-left,
+    .meet-right{
+        width:100%;
+    }
+
+    .meet-left h2{
+        font-size:34px;
+        line-height:1.2;
+    }
+
+    .meet-right p{
+        font-size:15px;
+        line-height:1.7;
+    }
+
+    .pediatrician-grid{
+        grid-template-columns:1fr;
+        padding:0 20px;
+        gap:25px;
+    }
+
+    .image-wrapper{
+        height:260px;
+    }
+
+    .card-body{
+        padding:20px;
+    }
+
+    .doctor-card h3{
+        font-size:22px;
+    }
+
+}
+
+/* =========================================
+SMALL MOBILE
+========================================= */
+
+@media(max-width:480px){
+
+    .meet-left h2{
+        font-size:30px;
+    }
+
+    .meet-right p{
+        font-size:14px;
+    }
+
+    .image-wrapper{
+        height:230px;
+    }
+
+    .card-body{
+        padding:18px;
+    }
+
+}
+
+/* =========================================
+safety-ai-section
+========================================= */
+.safety-ai-section {
+    background-color: #f2eee8; /* Specific cream background from image */
+    padding: 100px 20px;
+    display: flex;
+    justify-content: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.safety-container {
+    max-width: 1100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.safety-visual img {
+    width: 100%;
+    border-radius: 30px; /* Matching the rounded corners in the image */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.safety-content {
+    max-width: 500px;
+}
+
+.safety-content .sub-tag {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    color: #6b8a99;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.safety-title {
+    font-family: 'Georgia', serif; /* Brand serif font */
+    font-size: 44px;
+    line-height: 1.1;
+    color: #1a1a1a;
+    margin-bottom: 25px;
+    font-weight: 400;
+}
+
+.safety-desc {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 35px;
+}
+
+/* AI Chat Button */
+.btn-ai-chat {
+    background-color: #c95a3d; /* Brand terracotta color */
+    color: #fff;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 40px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background 0.3s ease;
+}
+
+.btn-ai-chat:hover {
+    background-color: #b04e35;
+}
+
+/* Responsive Handling */
+@media (max-width: 992px) {
+    .safety-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 40px;
+    }
+    
+    .safety-content {
+        margin: 0 auto;
+    }
+
+    .btn-ai-chat {
+        margin: 0 auto;
+    }
+    
+    .safety-title {
+        font-size: 32px;
+    }
+}
+
+/* =========================================
+RESPONSIVE
+========================================= */
+
+@media(max-width:992px){
+
+    .pediatrician-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:700px){
+
+    .pediatrician-grid{
+        grid-template-columns:1fr;
+        padding:0 20px;
+    }
+
+}
+
+/* =========================================
+privacy-section
+========================================= */
+
+.privacy-section {
+    background-color: #fcfbf9;
+    padding: 100px 5%;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.privacy-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+/* Typography */
+.sub-tag {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #6b8a99;
+    font-weight: 700;
+    border-bottom: 1px solid #dcd6ce;
+    padding-bottom: 4px;
+}
+
+.privacy-title {
+    font-family: 'Georgia', serif;
+    font-size: 46px;
+    line-height: 1.15;
+    color: #1a1a1a;
+    margin: 25px 0;
+    font-weight: 400;
+}
+
+.accent-text {
+    color: #c95a3d;
+    font-style: italic;
+}
+
+.privacy-desc {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    max-width: 480px;
+}
+
+/* Action Buttons */
+.privacy-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-outline {
+    text-decoration: none;
+    color: #1a1a1a;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 15px 25px;
+    border: 1px solid #e0e0e0;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background 0.3s;
+}
+
+.btn-outline:hover {
+    background: #f2eee8;
+}
+
+/* Bento Grid */
+.bento-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.bento-item {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 15px;
+    padding: 25px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.bento-title {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.3;
+}
+
+.bento-tech {
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: #aaa;
+    text-align: right;
+    text-transform: uppercase;
+}
+
+/* Technical Box */
+.data-residency-box {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 15px;
+    padding: 25px;
+}
+
+.box-label {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    color: #6b8a99;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 12px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+.data-residency-box p {
+    font-size: 11px;
+    color: #888;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.data-residency-box a {
+    color: #c95a3d;
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .privacy-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    .privacy-title {
+        font-size: 36px;
+    }
+}
+
+/* =========================================
+join-drive-fOOTER
+========================================= */
+
+.join-drive-footer {
+    background-color: #fcfbf9; /* Matching the light cream background in image */
+    padding: 120px 20px;
+    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.footer-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.join-drive-footer .sub-tag {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #6b8a99;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 30px;
+}
+
+.footer-main-title {
+    font-family: 'Georgia', serif; /* Exact serif style from image */
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: #1a1a1a;
+    margin-bottom: 45px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* CTA Button Styling */
+.cta-wrapper {
+    margin-bottom: 25px;
+}
+
+.btn-create-account {
+    background-color: #c95a3d; /* Specific terracotta color used across site */
+    color: #fff;
+    border: none;
+    padding: 16px 32px;
+    border-radius: 40px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: background 0.3s ease;
+}
+
+.btn-create-account:hover {
+    background-color: #b04e35;
+}
+
+/* Footer Partner Link */
+.partner-link-wrapper {
+    margin-top: 20px;
+}
+
+.partner-apply-link {
+    font-size: 13px;
+    color: #1a1a1a;
+    text-decoration: none;
+    border-bottom: 1px solid #1a1a1a;
+    padding-bottom: 2px;
+    transition: opacity 0.3s;
+}
+
+.partner-apply-link:hover {
+    opacity: 0.7;
+}
+
+.btn-create-account{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    text-decoration:none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .footer-main-title {
+        font-size: 32px;
+    }
+    .join-drive-footer {
+        padding: 80px 20px;
+    }
+}
+
+
+
+/* =========================================
+FOOTER
+========================================= */
+
+footer{
+background:#163d3d;
+padding:55px 20px;
+text-align:center;
+color:white;
+font-size:15px;
+}
+
+/* =========================================
+RESPONSIVE
+========================================= */
+
+@media(max-width:1100px){
+
+.top-bar{
+padding:0 18px;
+}
+
+.top-left{
+font-size:12px;
+}
+
+.top-right{
+gap:10px;
+}
+
+.clinic-btn{
+padding:8px 14px;
+font-size:12px;
+}
+
+.privacy{
+font-size:12px;
+}
+
+nav{
+top:52px;
+height:82px;
+padding:0 5%;
+}
+
+.menu-toggle{
+display:flex;
+}
+
+/* HIDE DESKTOP BUTTONS */
+
+.auth-buttons{
+display:none;
+}
+
+.mobile-auth{
+display:flex;
+}
+
+/* MOBILE MENU */
+
+.nav-links{
+position:absolute;
+top:82px;
+left:0;
+width:100%;
+background:white;
+display:none;
+flex-direction:column;
+align-items:flex-start;
+padding:28px 5%;
+gap:22px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+border-top:1px solid rgba(0,0,0,0.05);
+}
+
+.nav-links.active{
+display:flex;
+}
+
+.hero-title{
+font-size:54px;
+}
+
+}
+
+@media(max-width:768px){
+
+.top-bar{
+height:auto;
+padding:10px 14px;
+flex-direction:column;
+gap:10px;
+align-items:flex-start;
+}
+
+nav{
+top:88px;
+}
+
+.logo h1{
+font-size:26px;
+}
+
+.hero{
+padding-top:220px;
+padding-bottom:100px;
+height:auto;
+}
+
+.hero-title{
+font-size:42px;
+}
+
+.hero-desc{
+font-size:20px;
+}
+
+.hero-buttons{
+flex-direction:column;
+}
+
+.section-title{
+font-size:40px;
+}
+
+}
+
+.nav-links .mobile-auth{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  margin-top:20px;
+  width:100%;
+  
+}
+
+.mobile-auth{
+  display:flex;
+}
+
+.mobile-auth .login-btn,
+.mobile-auth .signup-btn,
+.mobile-auth .logout-btn{
+width:100%;
+text-align:center;
+}
+
+
+/* Footer Replica Styles - Professional Tighter Spacing */
+.vax-footer {
+    background-color: #f2eee8;
+    padding: 50px 10% 40px 10%; /* Reduced top/bottom padding for closeness */
+    color: #444;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.footer-brand {
+    max-width: 380px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px; /* Reduced from 25px */
+}
+
+.logo-icon {
+    background-color: #c95a3d;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    transform: rotate(-45deg);
+}
+
+.logo-text {
+    font-family: 'Georgia', serif;
+    font-size: 24px;
+    color: #1a1a1a;
+}
+
+.footer-brand p {
+    font-size: 14px; /* Slightly smaller for professional feel */
+    line-height: 1.5;
+    color: #666;
+}
+
+.footer-nav-group h4 {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #6b8a99;
+    text-transform: uppercase;
+    margin-bottom: 15px; /* Reduced from 25px */
+    border-bottom: 1px solid #dcd6ce;
+    display: inline-block;
+    padding-bottom: 4px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 8px; /* Reduced from 12px for tighter list */
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #555;
+    font-size: 13.5px;
+    transition: color 0.2s;
+}
+
+.footer-links a:hover {
+    color: #c95a3d;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px; /* Reduced from 15px */
+    font-size: 13.5px;
+    color: #555;
+}
+
+.contact-item i {
+    font-size: 15px;
+    color: #888;
+}
+
+.contact-item a {
+    text-decoration: underline;
+    color: #555;
+    text-decoration-color: #ccc;
+}
+
+@media (max-width: 768px) {
+    .vax-footer {
+        flex-direction: column;
+        padding: 40px 30px; /* Tighter mobile padding */
+        gap: 30px;
+    }
+}
+

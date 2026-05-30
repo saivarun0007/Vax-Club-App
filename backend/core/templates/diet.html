@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Diet - Coming Soon</title>
+
+    <!-- GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- CSS -->
+    <!--<link rel="stylesheet" href="./css/diet.css">-->
+    <link rel="stylesheet" href="{% static 'css/diet.css' %}">
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="diet-navbar">
+
+       <a href="{% url 'index' %}" class="logo">
+
+            <div class="logo-circle">
+                <i class="fa-solid fa-heart"></i>
+            </div>
+
+            <h1>VaxClub</h1>
+
+        </a>
+
+        <a href="{% url 'index' %}" class="back-btn">
+    <i class="fa-solid fa-arrow-left"></i>
+    Back Home
+</a>
+
+    </nav>
+
+    <!-- COMING SOON SECTION -->
+    <section class="coming-section">
+
+        <div class="coming-card">
+
+            <div class="coming-icon">
+                <i class="fa-solid fa-utensils"></i>
+            </div>
+
+            <small>DIET & NUTRITION</small>
+
+            <h1>
+                Diet Page is
+                <span>Coming Soon</span>
+            </h1>
+
+            <p>
+                We are preparing personalized diet plans,
+                healthy nutrition guides, and wellness tracking
+                features for you.
+            </p>
+
+           
+
+            <button class="notify-btn">
+                <i class="fa-solid fa-bell"></i>
+                Notify Me
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- JS -->
+    <!--<script src="./js/diet.js"></script>-->
+    <script src="{% static 'js/diet.js' %}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,131 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Safety FAQ - Coming Soon</title>
+
+    <!-- GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- CSS -->
+    <!--<link rel="stylesheet" href="./css/safetyfaq.css">-->
+    <link rel="stylesheet" href="{% static 'css/safetyfaq.css' %}">
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav class="safety-navbar">
+
+       <a href="{% url 'index' %}" class="logo">
+
+            <div class="logo-circle">
+                <i class="fa-solid fa-shield-heart"></i>
+            </div>
+
+            <h1>VaxClub</h1>
+
+        </a>
+
+          <a href="{% url 'index' %}" class="back-btn">
+    <i class="fa-solid fa-arrow-left"></i>
+    Back Home
+</a>
+
+    </nav>
+
+    <!-- MAIN SECTION -->
+
+    <section class="safety-section">
+
+        <div class="safety-card">
+
+            <div class="safety-icon">
+
+                <i class="fa-solid fa-circle-question"></i>
+
+            </div>
+
+            <small>SAFETY & FAQ CENTER</small>
+
+            <h1>
+                Safety FAQ Page is
+                <span>Coming Soon</span>
+            </h1>
+
+            <p>
+                We are preparing a dedicated safety and FAQ
+                center with vaccination guidance, health
+                information, AI assistance, and frequently
+                asked healthcare questions.
+            </p>
+
+            <!-- STATUS -->
+
+            <div class="safety-status">
+
+                <div class="status-item">
+
+                    <i class="fa-solid fa-shield-virus"></i>
+
+                    <h3>Safety Guides</h3>
+
+                    <span>Updating Soon</span>
+
+                </div>
+
+                <div class="status-item">
+
+                    <i class="fa-solid fa-robot"></i>
+
+                    <h3>AI Assistance</h3>
+
+                    <span>Coming Soon</span>
+
+                </div>
+
+                <div class="status-item">
+
+                    <i class="fa-solid fa-book-medical"></i>
+
+                    <h3>FAQ Articles</h3>
+
+                    <span>Launching Soon</span>
+
+                </div>
+
+            </div>
+
+            <!-- BUTTON -->
+
+            <button class="safety-btn">
+
+                <i class="fa-solid fa-bell"></i>
+
+                Notify Me
+
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- JS -->
+
+    <!--<script src="./js/safetyfaq.js"></script>-->
+    <script src="{% static 'js/safetyfaq.js' %}"></script>
+
+</body>
+
+</html>

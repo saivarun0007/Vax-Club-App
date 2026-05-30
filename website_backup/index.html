@@ -1,0 +1,671 @@
+<!-- =========================================
+VAXCLUB FINAL PROFESSIONAL VERSION
+Top Bar + Perfect Responsive Navbar
+========================================= -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VaxClub - Family Vaccination</title>
+
+<!-- GOOGLE FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- FONT AWESOME -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <link rel="stylesheet" href="./css/index.css" />
+  
+</head>
+
+<body>
+
+<!-- =========================================
+TOP BAR
+========================================= -->
+
+<div class="top-bar">
+
+<div class="top-left">
+✨ Pre-book at VaxClub → 7% off all vaccines · 20% off Influenza Vaccinate at VaxClub Partner Clinics
+</div>
+
+<div class="top-right">
+
+<a href="partner.html" class="clinic-btn">
+Find clinics →
+</a>
+
+<div class="privacy">
+<i class="fa-solid fa-lock"></i>
+Data-privacy first
+</div>
+
+</div>
+
+</div>
+
+<nav>
+
+  <a href="index.html" class="logo">
+
+  <div class="logo-circle">
+    <i class="fa-solid fa-syringe"></i>
+  </div>
+
+  <h1>VaxClub</h1>
+
+</a>
+
+  <div class="nav-links" id="mobileMenu">
+    <a href="drive.html">Drives</a>
+    <a href="partner.html">Partner Clinics</a>
+    <a href="virtual.html">Virtual Consult</a>
+    <a href="diet.html">Diet Chart</a>
+    <a href="vaccine.html">Vaccine Catalog</a>
+    <a href="blog.html">Blog</a>
+    <a href="safetyfaq.html">Safety & FAQ</a>
+    <a href="adminlogin.html"><!---modify this--->
+      <i class="fa-solid fa-user-shield"></i> Admin
+    </a>
+  </div>
+
+  <!-- FIXED: AUTH OUTSIDE MENU -->
+  <div class="auth-buttons" id="desktopAuth">
+
+  <a href="login.html" class="login-btn">
+    <i class="fa-solid fa-right-to-bracket"></i> Login
+  </a>
+
+  <a href="signup.html" class="signup-btn">
+    <i class="fa-solid fa-user-plus"></i> Sign Up
+  </a>
+
+</div>
+  <!-- BURGER -->
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <i class="fa-solid fa-bars"></i>
+  </div>
+
+</nav>
+
+<!-- IMPORTANT: MOBILE AUTH OUTSIDE NAV -->
+<div class="mobile-auth"></div>
+
+<!-- FLOATING AUTH ICONS (MOBILE ONLY) -->
+<div class="floating-auth" id="floatingAuth">
+
+  <a href="login.html" class="fab login" title="Login">
+    <i class="fa-solid fa-right-to-bracket"></i>
+  </a>
+
+  <a href="signup.html" class="fab signup" title="Sign Up">
+    <i class="fa-solid fa-user-plus"></i>
+  </a>
+
+  <a href="#" class="fab logout" title="Logout" onclick="logoutUser()">
+    <i class="fa-solid fa-right-from-bracket"></i>
+  </a>
+
+</div>
+
+<!-- Hero Section -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="hero-sub">
+VAXCLUB • FAMILY VACCINATION
+</div>
+
+<h1 class="hero-title">
+<span>Doctor-led vaccination</span>
+<br>
++ decision support
+</h1>
+
+<div class="badges">
+
+<div class="badge">TRUSTED</div>
+<div class="badge">SAFE</div>
+<div class="badge">CLINICAL</div>
+
+</div>
+
+<div class="hero-desc">
+Know <span>what to give, when to delay,</span>
+and when to worry.
+</div>
+
+<div class="hero-buttons">
+
+<button class="hero-btn primary-btn">
+Browse Upcoming Drives →
+</button>
+
+<button class="hero-btn secondary-btn">
+<i class="fa-regular fa-message"></i>
+Book a Virtual Consult
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Ask AI -->
+
+<section class="vaxcare-hero">
+    <div class="vaxcare-container">
+        <div class="content-left">
+            <span class="sub-headline">ASK AI • VAXCARE</span>
+            <h1 class="main-title">
+                Quick clinical answers, <br>
+                <span class="italic-text">when you need them most.</span>
+            </h1>
+            <p class="description">
+                Trained on IAP-ACVIP 2023 + Adult Vaccination Consensus 2026. Tap a common parent question or type your own. For anything urgent, our doctors are one WhatsApp click away.
+            </p>
+            <button class="cta-button">
+                <span class="sparkle-icon">✦</span> Ask VaxCare AI
+            </button>
+        </div>
+
+        <div class="faq-cards">
+            <div class="card card-orange">
+                <div class="card-header">
+                    <span class="icon">🌡️</span> <span class="faq-label">FAQ 1</span>
+                </div>
+                <p class="card-text">When to worry if fever after vaccine?</p>
+                <a href="#" class="get-answer">Get answer →</a>
+            </div>
+
+            <div class="card card-green">
+                <div class="card-header">
+                    <span class="icon">❓</span> <span class="faq-label">FAQ 2</span>
+                </div>
+                <p class="card-text">Can my child take the vaccine today?</p>
+                <a href="#" class="get-answer">Get answer →</a>
+            </div>
+
+            <div class="card card-beige">
+                <div class="card-header">
+                    <span class="icon">⚠️</span> <span class="faq-label">FAQ 3</span>
+                </div>
+                <p class="card-text">Is it safe to take the vaccine today?</p>
+                <a href="#" class="get-answer">Get answer →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- TOP: DIET CHART REPLICA -->
+
+<section class="diet-section">
+    <div class="diet-container">
+        
+        
+        <div class="diet-hero">
+            <div class="diet-text">
+                <small><i class="fas fa-apple-alt"></i> PERSONALISED DIET AI CHART</small>
+                <h2>A <span>7-day diet chart</span>, written for your child or you.</h2>
+                <p>Add age, gender, cuisine, allergies — and (optionally) Hb / B12 / Vit-D / LFT / KFT lab values + weight + height. Our AI dietitian designs a 7-day plan that quietly corrects deficiencies, computes BMI, and downloads as a clean PDF.</p>
+                <div class="diet-btns">
+                    <button class="btn-diet-primary"><i class="fas fa-apple-alt"></i> Generate my Diet Chart</button>
+                    <button class="btn-diet-outline">Why this works →</button>
+                </div>
+            </div>
+
+            <div class="diet-sample-card">
+                <div class="sample-header">SAMPLE • DAY 1</div>
+                <div class="diet-row">
+                    <div class="diet-time">7:00 AM</div>
+                    <div class="diet-food">Warm milk + 2 soaked almonds + 2 raisins</div>
+                </div>
+                <div class="diet-row">
+                    <div class="diet-time">9:00 AM</div>
+                    <div class="diet-food">Vegetable poha with peanuts & lemon · ½ cup curd</div>
+                </div>
+                <div class="diet-row">
+                    <div class="diet-time">12:30 PM</div>
+                    <div class="diet-food">Roti · dal · sautéed bhindi · cucumber salad</div>
+                </div>
+                <div class="diet-row">
+                    <div class="diet-time">4:00 PM</div>
+                    <div class="diet-food">Fruit (banana / apple) + handful of roasted chana</div>
+                </div>
+                <div class="diet-row">
+                    <div class="diet-time">7:30 PM</div>
+                    <div class="diet-food">Khichdi with ghee + steamed carrots & beans</div>
+                </div>
+                <div class="sample-footer">Real plans adapt to lab values, age, allergies and BMI category.</div>
+            </div>
+        </div>
+
+        <!-- BOTTOM: SERVICE CARDS -->
+        <div class="service-cards">
+            <div class="s-card">
+                <small>For Ages 4+ / Adult</small>
+                <h3>Weekend Clubhouse Drive</h3>
+                <p>Saturday/Sunday pop-up drives right inside your community clubhouse. Social, convenient, community-led.</p>
+                <a href="#">Browse drives →</a>
+            </div>
+
+            <div class="s-card">
+                <small>For Under-4 & Adults</small>
+                <h3>Partner Clinic (Pre-book)</h3>
+                <p>Pre-book at VaxClub for <span style="color:#c95a3d; font-weight:bold;">7% off</span> (20% off Flu). Visit a VaxClub-certified partner pediatric clinic on your chosen date.</p>
+                <a href="#">Find a partner clinic →</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- MEMBERSHIP SECTION -->
+<section class="membership-section">
+    <div class="membership-container">
+        <div class="membership-left">
+            <small><i class="fas fa-piggy-bank"></i> VAXCLUB MEMBERSHIP · FAMILIES SAVE MORE</small>
+            <h2>Save ₹20,000+ over 2 years by joining VaxClub.</h2>
+            <p>Between 7% off pre-booked partner-clinic visits, 20% off flu shots, and zero consultation surcharges at weekend drives — a typical family of four banks meaningful savings while staying fully on schedule.</p>
+            <div class="membership-btns">
+                <button class="btn-join">Join free — start saving →</button>
+                <button class="btn-prices">See vaccine prices</button>
+            </div>
+        </div>
+        <div class="membership-cards">
+            <div class="benefit-card">
+                <h4><i class="fas fa-chart-line" style="font-size: 18px; color:#c95a3d; transform: rotate(45deg);"></i> 7%</h4>
+                <p>Off every pre-booked partner-clinic vaccine</p>
+            </div>
+            <div class="benefit-card">
+                <h4><i class="fas fa-chart-line" style="font-size: 18px; color:#c95a3d; transform: rotate(45deg);"></i> 20%</h4>
+                <p>Off flu shots, every season</p>
+            </div>
+            <div class="benefit-card">
+                <h4><i class="fas fa-chart-line" style="font-size: 18px; color:#c95a3d; transform: rotate(45deg);"></i> ₹0</h4>
+                <p>Consultation at weekend clubhouse drives</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CLUBHOUSE IMAGE REPLICA SECTION -->
+<section class="clubhouse-section">
+    <div class="clubhouse-container">
+        <div class="clubhouse-card-left">
+            <div class="icon-home"><i class="fas fa-home"></i></div>
+            <h2>At your clubhouse, not a clinic.</h2>
+            <p>We set up a pop-up pediatric bay right inside your community hall — play corner for siblings, cold-chain boxes, and zero commute for sleepy toddlers.</p>
+        </div>
+        <div class="clubhouse-image-right">
+            <img src="https://images.pexels.com/photos/7108344/pexels-photo-7108344.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Pediatric examination">
+        </div>
+    </div>
+</section>
+
+
+<!-- REPLICA FEATURE CARDS BOTTOM ROW -->
+<section class="feature-row">
+    <div class="feature-container">
+        <!-- Card 1 -->
+        <div class="f-card">
+            <div class="f-icon"><i class="fas fa-stethoscope"></i></div>
+            <h3>NMC-certified Clinicians</h3>
+            <p>Every drive is led by clinicians registered with the National Medical Commission (NMC), with 10+ years in pediatric and family immunization.</p>
+        </div>
+        <!-- Card 2 -->
+        <div class="f-card">
+            <div class="f-icon"><i class="far fa-calendar-alt"></i></div>
+            <h3>Weekend-only slots</h3>
+            <p>Saturdays & Sundays, 9 AM to 1 PM. Book any 15-minute slot that suits your family's morning.</p>
+        </div>
+        <!-- Card 3 -->
+        <div class="f-card">
+            <div class="f-icon"><i class="fas fa-shield-alt"></i></div>
+            <h3>Immunization tracker</h3>
+            <p>Add each child. We auto-flag due vaccines per WHO/IAP schedules — no paper cards to lose.</p>
+        </div>
+    </div>
+</section>
+
+<!-- UPCOMING DRIVES -->
+<section class="upcoming-drives">
+    <div class="upcoming-container">
+        <div class="upcoming-header">
+            <div class="upcoming-header-left">
+                <small>THIS WEEKEND & BEYOND</small>
+                <h2>Upcoming Drives</h2>
+            </div>
+            <button class="btn-see-all">See all <i class="fas fa-arrow-right"></i></button>
+        </div>
+        <div id="homeDrivesContainer"></div>
+    </div>
+</section>
+
+
+<!-- SECTION FOR NOT LOGGED IN USERS -->
+<section class="meet-pediatricians" id="guestDoctorsSection">
+    <div class="meet-container">
+        <div class="meet-left">
+            <small>THE HANDS YOU'RE TRUSTING</small>
+            <h2>Meet our pediatricians</h2>
+        </div>
+
+        <div class="meet-right">
+            <p>
+                A small, carefully-vetted team of pediatricians who lead our
+                weekend drives. All are board-certified with dedicated expertise
+                in routine childhood immunization.
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<!-- SECTION FOR LOGGED IN USERS -->
+<section id="loggedDoctorsSection" style="display:none;">
+
+    <div
+      class="pediatrician-grid"
+      id="doctorContainer"
+    ></div>
+
+</section>
+
+  <!--  <div class="pediatrician-grid">
+
+         Doctor 1 
+        <div class="doctor-card">
+            <div class="image-wrapper">
+                <img src="./images/2.png" alt="Dr. Marcus Hale">
+            </div>
+
+            <div class="card-body">
+                <span class="role-tag">PEDIATRICIAN</span>
+
+                <h3>Dr. Marcus Hale</h3>
+
+                <p class="qualifications">
+                    MD, Board-Certified, 10+ yrs at Children's Hospital
+                </p>
+
+                <p class="specialty">
+                    Gentle with anxious kids, certified in IAP schedules.
+                </p>
+
+                <div class="exp-badge">
+                    14+ yrs experience
+                </div>
+            </div>
+        </div>
+
+
+         Doctor 2 
+        <div class="doctor-card">
+            <div class="image-wrapper">
+                <img src="./images/3.png" alt="Dr. Priya Shenoy">
+            </div>
+
+            <div class="card-body">
+                <span class="role-tag">PEDIATRICIAN</span>
+
+                <h3>Dr. Priya Shenoy</h3>
+
+                <p class="qualifications">
+                    MBBS, DNB Paediatrics, Fellowship in Neonatology
+                </p>
+
+                <p class="specialty">
+                    Weekend community drive lead since 2020.
+                </p>
+
+                <div class="exp-badge">
+                    9+ yrs experience
+                </div>
+            </div>
+        </div>
+
+
+         Doctor 3 
+        <div class="doctor-card">
+            <div class="image-wrapper">
+                <img src="./images/1.png" alt="Dr. Nitin Chawla">
+            </div>
+
+            <div class="card-body">
+                <span class="role-tag">PEDIATRICIAN</span>
+
+                <h3>Dr Nitin Chawla</h3>
+
+                <p class="qualifications">
+                    DNB PEDIATRICS, PGFPN, PGFPE
+                </p>
+
+                <p class="specialty">
+                    Seasoned clinician with decades of experience
+                </p>
+
+                <div class="exp-badge">
+                    15+ yrs experience
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section> -->
+
+<!-- safety-ai-section -->
+
+<section class="safety-ai-section">
+    <div class="safety-container">
+        <div class="safety-visual">
+            <img src="./images/4.png" alt="Abstract safety visual">
+        </div>
+
+        <div class="safety-content">
+            <span class="sub-tag">SAFETY, ANSWERED WARMLY</span>
+            <h2 class="safety-title">Every worry deserves a thoughtful, evidence-based reply.</h2>
+            <p class="safety-desc">
+                Our AI companion — trained on pediatric guidelines — answers parents' questions about side effects, schedules, myths, and what to expect at a drive.
+            </p>
+            <button class="btn-ai-chat">
+                <i class="far fa-comment-dots"></i> Chat with VaxCare AI
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- privacy-section -->
+
+<section class="privacy-section">
+    <div class="privacy-container">
+        <div class="privacy-content-main">
+            <span class="sub-tag">PRIVACY COMMITMENT</span>
+            <h2 class="privacy-title">Your family's health is <span class="accent-text">private</span> — and we protect it like it's our own.</h2>
+            <p class="privacy-desc">
+                Medical-grade encryption, zero advertising, zero third-party AI training. Every appointment begins with your explicit consent — and ends only when you say so.
+            </p>
+            <div class="privacy-actions">
+                <a href="#" class="btn-outline">Read our privacy commitment <i class="fas fa-arrow-right"></i></a>
+                <a href="#" class="btn-outline">Financial security <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+
+        <div class="privacy-grid-container">
+            <div class="bento-grid">
+                <div class="bento-item">
+                    <span class="bento-title">Your Data is safe & secure</span>
+                    <span class="bento-tech">AES-128</span>
+                </div>
+                <div class="bento-item">
+                    <span class="bento-title">Doctor reviewed Records</span>
+                    <span class="bento-tech">HMAC</span>
+                </div>
+                <div class="bento-item">
+                    <span class="bento-title">No ads</span>
+                    <span class="bento-tech">ZERO DATA SHARING</span>
+                </div>
+                <div class="bento-item">
+                    <span class="bento-title">1-click</span>
+                    <span class="bento-tech">DELETE YOUR DATA</span>
+                </div>
+            </div>
+
+            <div class="data-residency-box">
+                <span class="box-label">AUTHORIZATION & DATA RESIDENCY</span>
+                <p>
+                    AES-128 encryption uses Python <i>cryptography.fernet</i> (AES-CBC + HMAC-SHA256) with keys held only in our backend secrets vault. Tamper-evident records are HMAC-SHA256 signed and verified on every read. Patient data is stored in a <b>private MongoDB cluster on Indian cloud infrastructure</b> — never shared with advertisers, never used for AI training. Compliant with India's DPDP Act 2023 & relevant RBI norms for payment data. Read more on the <a href="#">Security</a> & <a href="#">Privacy</a> pages.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- join-drive-footer -->
+
+<section class="join-drive-footer">
+    <div class="footer-container">
+        <span class="sub-tag">JOIN YOUR NEIGHBORHOOD DRIVE</span>
+        <h2 class="footer-main-title">A clubhouse weekend. A checkmark on the schedule. A calmer parent.</h2>
+        
+        <div class="cta-wrapper">
+    <a href="signup.html" class="btn-create-account">
+        Create a free family account
+        <i class="fas fa-arrow-right"></i>
+    </a>
+</div>
+
+        <div class="partner-link-wrapper">
+            <a href="#" class="partner-apply-link">
+                Run a clinic, hospital or pharmacy? Apply as a VaxClub Partner →
+            </a>
+        </div>
+    </div>
+</section>
+
+
+<div class="floating">
+  <a href="https://wa.me/" class="whatsapp" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  <a href="#" class="chatbot">
+    <i class="fas fa-robot"></i>
+  </a>
+</div>
+
+<div id="chatbotBox" style="
+  position:fixed;
+  bottom:90px;
+  right:20px;
+  width:300px;
+  background:#fff;
+  border-radius:15px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.2);
+  display:none;
+  flex-direction:column;
+  overflow:hidden;
+  z-index:3000;
+">
+
+  <div style="background:#2f5d57;color:#fff;padding:10px;font-weight:500;">
+    VaxBot 🤖
+  </div>
+
+  <div id="chatMessages" style="
+    height:250px;
+    overflow-y:auto;
+    padding:10px;
+    font-size:13px;
+  ">
+    <div>👋 Hi! Ask me anything about vaccines.</div>
+  </div>
+
+  <div style="display:flex;border-top:1px solid #eee;">
+    <input id="chatInput" type="text" placeholder="Type a message..."
+      style="flex:1;border:none;padding:10px;font-size:13px;outline:none;">
+    <button id="sendBtn" style="
+      background:#c95a3d;
+      color:#fff;
+      border:none;
+      padding:10px 15px;
+      cursor:pointer;
+    ">Send</button>
+  </div>
+
+</div>
+
+<!-- Footer -->
+ 
+<footer class="vax-footer">
+    <!-- Brand Section -->
+    <div class="footer-brand">
+        <div class="footer-logo">
+            <div class="logo-icon"><i class="fas fa-syringe"></i></div>
+            <span class="logo-text">VaxClub</span>
+        </div>
+        <p>Board-certified pediatricians visiting your community clubhouse every weekend, making childhood vaccinations convenient, safe, and reassuring for every family.</p>
+    </div>
+
+    <!-- Explore Section -->
+    <div class="footer-nav-group">
+        <h4>Explore</h4>
+        <ul class="footer-links">
+            <li><a href="#">Weekend Drives</a></li>
+            <li><a href="#">Partner Clinics</a></li>
+            <li><a href="#">Vaccine Catalog</a></li>
+            <li><a href="#">Blog · Articles</a></li>
+            <li><a href="#">Safety & FAQ</a></li>
+            <li><a href="#">Privacy Commitment</a></li>
+            <li><a href="#">Financial Security</a></li>
+            <li><a href="#">Become a Partner</a></li>
+            <li><a href="#">Create Account</a></li>
+        </ul>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="footer-nav-group">
+        <h4>Contact</h4>
+        <div class="contact-item">
+            <i class="far fa-envelope"></i>
+            <a href="mailto:contact@vaxclub.com">Contact us</a>
+        </div>
+        <div class="contact-item">
+            <i class="far fa-comment"></i>
+            <span>Chat on WhatsApp</span>
+        </div>
+        <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Weekends at your clubhouse</span>
+        </div>
+    </div>
+</footer>
+
+<!-- =========================================
+FOOTER
+========================================= -->
+
+<footer>
+© 2026 VaxClub · Developed by SKR Tech solutions
+</footer>
+
+<!-- =========================================
+JAVASCRIPT
+========================================= -->
+
+ <script src="./js/index.js"></script>
+ 
+</body>
+</html>
